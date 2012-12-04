@@ -1,0 +1,30 @@
+all: foo.so foo.import.so bar.so bar.import.so baz.so baz.import.so quux.so quux.import.so
+
+foo.so: foo.scm
+	csc -s -J foo.scm
+
+foo.import.so: foo.import.scm
+	csc -s -d0 -O3 foo.import.scm
+
+bar.so: bar.scm
+	csc -s -J bar.scm
+
+bar.import.so: bar.import.scm
+	csc -s -d0 -O3 bar.import.scm
+
+baz.so: baz.scm
+	csc -s -J baz.scm
+
+baz.import.so: baz.import.scm
+	csc -s -d0 -O3 baz.import.scm
+
+quux.so: quux.scm
+	csc -s -J quux.scm
+
+quux.import.so: quux.import.scm
+	csc -s -d0 -O3 quux.import.scm
+
+clean: 
+	rm -f foo.so foo.import.so foo.import.scm bar.so bar.import.so bar.import.scm baz.so baz.import.so baz.import.scm quux.so quux.import.so quux.import.scm *~
+
+.PHONY: all clean

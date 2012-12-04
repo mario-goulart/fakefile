@@ -1,0 +1,8 @@
+;; -*- scheme -*-
+(compile -d0 -O3 -J -s fakefile.scm)
+(compile -d0 -O3 -s fakefile.import.scm)
+
+(install-extension
+ 'fakefile
+ '("fakefile.so" "fakefile.import.so")
+ '((version "0.1")))

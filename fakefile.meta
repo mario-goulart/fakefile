@@ -1,0 +1,5 @@
+((synopsis "A simple DSL to generate makefiles")
+ (author "Mario Domenech Goulart")
+ (category misc)
+ (license "BSD")
+ (test-depends simple-sha1 test))
