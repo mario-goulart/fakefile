@@ -1,3 +1,5 @@
+SOME_VAR ?= value
+
 all: foo.so foo.import.so bar.so bar.import.so baz.so baz.import.so quux.so quux.import.so
 
 foo.so: foo.scm

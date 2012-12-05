@@ -51,6 +51,7 @@
 (write-makefile
  "Makefile"
  (append
+  (list "SOME_VAR ?= value")
   `((all ,(map car extensions-rules)))
   extensions-rules
   `((clean () ,cleanup-command))

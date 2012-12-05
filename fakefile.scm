@@ -20,13 +20,15 @@
     (lambda ()
       (for-each
        (lambda (rule)
-         (let ((target (car rule))
-               (deps (cadr rule))
-               (cmds (cddr rule)))
-           (printf "~a: ~a\n" target (concat deps))
-           (if (null? cmds)
-               (newline)
-               (printf "\t~a\n\n" (concat (shell* cmds) "\n\t")))))
+         (if (string? rule)
+             (printf "~a\n\n" rule)
+             (let ((target (car rule))
+                   (deps (cadr rule))
+                   (cmds (cddr rule)))
+               (printf "~a: ~a\n" target (concat deps))
+               (if (null? cmds)
+                   (newline)
+                   (printf "\t~a\n\n" (concat (shell* cmds) "\n\t"))))))
        rules))))
 
 ) ;; end module
