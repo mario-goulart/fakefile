@@ -28,3 +28,4 @@ clean:
 	rm -f foo.so foo.import.so foo.import.scm bar.so bar.import.so bar.import.scm baz.so baz.import.so baz.import.scm quux.so quux.import.so quux.import.scm *~
 
 .PHONY: all clean
+

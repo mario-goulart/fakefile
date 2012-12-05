@@ -15,7 +15,7 @@
          (shell ,cmd))
        cmds))
 
-(define (write-makefile file rules #!key phony)
+(define (write-makefile file rules)
   (with-output-to-file file
     (lambda ()
       (for-each
@@ -27,8 +27,6 @@
            (if (null? cmds)
                (newline)
                (printf "\t~a\n\n" (concat (shell* cmds) "\n\t")))))
-       rules)
-      (when phony
-        (printf ".PHONY: ~a\n" (concat phony))))))
+       rules))))
 
 ) ;; end module

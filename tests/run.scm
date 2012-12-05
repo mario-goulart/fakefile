@@ -53,8 +53,8 @@
  (append
   `((all ,(map car extensions-rules)))
   extensions-rules
-  `((clean () ,cleanup-command)))
- phony: '(all clean))
+  `((clean () ,cleanup-command))
+  `((.PHONY (all clean)))))
 
 
 ;;; Test
