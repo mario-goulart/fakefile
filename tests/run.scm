@@ -23,7 +23,7 @@
          (ext-scm (extension.scm ext))
          (mod-scm (extension.import.scm ext)))
     `((,(extension.so ext) (,ext-scm)
-       (csc -s -J ,ext-scm))
+       (csc -s -J ,@csc-options ,ext-scm))
       (,(extension.import.so ext) (,mod-scm)
        (csc -s ,@csc-options ,mod-scm)))))
 
